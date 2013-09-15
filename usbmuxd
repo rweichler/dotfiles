@@ -1,0 +1,6 @@
+DIR=$( cd "$( dirname "$0" )" && pwd )
+screen -dmS usbmuxd sh
+screen -S usbmuxd -p 0 -X stuff "$DIR/usbmuxd-1.0.8/python-client/tcprelay.py -t 22:2222
+"
+echo "Created new screen \"usbmuxd\" running the daemon."; echo "Use \"ssh iphone\" or \"ssh root@127.0.0.1 -p 2222\""
+
