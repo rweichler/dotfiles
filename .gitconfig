@@ -1,0 +1,7 @@
+[user]
+    name = Reed Weichler
+    email = reed@r333d.com
+[color]
+    ui = auto
+[alias]
+    ls = status
