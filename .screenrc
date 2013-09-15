@@ -1,0 +1,8 @@
+autodetach on
+startup_message off
+defscrollback 30000
+
+
+caption always "%{kB}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{kB}%?%+Lw%?"
+vbell off
+term xterm-color

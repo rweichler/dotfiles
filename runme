@@ -1,0 +1,7 @@
+if [[ -z "$1" ]]
+then
+    echo "No directory specified"
+else
+    rsync -rv --exclude={.git,README.md,runme} . $1 > /dev/null
+    echo "copied to $1"
+fi
