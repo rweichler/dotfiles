@@ -5,3 +5,11 @@
     ui = auto
 [alias]
     ls = status
+    day = log --since="yesterday" --pretty="oneline"
+    cmall = commit -a
+    cma = commit -a
+    cmam = commit -a -m
+    pushm = push origin master
+    pullm = pull origin master
+    pusho = push origin
+    pullo = pull origin
