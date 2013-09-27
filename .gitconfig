@@ -1,6 +1,6 @@
 [user]
     name = Reed Weichler
-    email = reed@r333d.com
+    email = rweichler@gmail.com
 [color]
     ui = auto
 [alias]
@@ -13,3 +13,5 @@
     pullm = pull origin master
     pusho = push origin
     pullo = pull origin
+[core]
+	excludesfile = /Users/reed/.gitignore_global
