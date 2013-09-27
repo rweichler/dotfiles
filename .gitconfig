@@ -14,4 +14,4 @@
     pusho = push origin
     pullo = pull origin
 [core]
-	excludesfile = /Users/reed/.gitignore_global
+	excludesfile = ~/.gitignore_global

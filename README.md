@@ -28,11 +28,16 @@ This is a daemon that allows you to forward a port from your iOS device to the c
 
 ### .gitconfig
 
-Just changes the colors, and adds the alias ls=status.
+* Changes the colors
+* alias ls=status
+* ~/.gitignore_global
 
 ### .bashrc
 
-A couple of nifty features including colored ls, [jump/mark](http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html), lsg (git ls, so I can do clear;lsg quickly).
+* colored LS
+* [jump/mark](http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html)
+* alias lsg="git ls" (so I can do clear;lsg quickly)
+* gap MESSAGE = git commit -a -m MESSAGE && git push origin master
 
 And other stuff I forgot
 
@@ -42,7 +47,9 @@ Actually makes it usable.
 
 ### .vimrc
 
-Adds line numbers, current working directory to bottom, mouse support mostly. And some aliases for quicker web dev.
+* line numbers, current working directory to bottom, mouse support
+* some aliases for quicker web dev
+* :Hex toggles hex editing mode
 
 ### .ssh
 
