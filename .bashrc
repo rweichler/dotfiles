@@ -7,7 +7,12 @@ alias cdupupupup="cdupup;cdupup"
 
 function __gap {
     git commit -a -m "$1"
-    git push origin master
+    if [ $# -ne 2 ]
+    then
+        git push origin master
+    else
+        git push origin $2
+    fi
 }
 
 alias gap="__gap"

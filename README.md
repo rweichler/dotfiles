@@ -37,7 +37,8 @@ This is a daemon that allows you to forward a port from your iOS device to the c
 * colored LS
 * [jump/mark](http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html)
 * alias lsg="git ls" (so I can do clear;lsg quickly)
-* gap MESSAGE = git commit -a -m MESSAGE && git push origin master
+* gap MESSAGE BRANCH = git commit -a -m MESSAGE && git push origin BRANCH
+* gap MESSAGE = gap MESSAGE master
 
 And other stuff I forgot
 
