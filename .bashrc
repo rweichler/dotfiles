@@ -1,4 +1,17 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
+
+alias cdup="cd .."
+alias cdupup="cdup;cdup"
+alias cdupupup="cdup;cdupup"
+alias cdupupupup="cdupup;cdupup"
+
+function __gap {
+    git commit -a -m "$1"
+    git push origin master
+}
+
+alias gap="__gap"
+
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -21,7 +34,7 @@ alias mk="mark"
 _completemarks() {
   local curw=${COMP_WORDS[COMP_CWORD]}
   local wordlist=$(gfind $MARKPATH -type l -printf "%f\n")
-  COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
+  COMPREPLY=($(echo $(compgen -W '${wordlist[@]}' -- "$curw")/))
   return 0
 }
 
