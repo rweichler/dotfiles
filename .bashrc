@@ -1,9 +1,9 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-alias cdup="cd .."
-alias cdupup="cdup;cdup"
-alias cdupupup="cdup;cdupup"
-alias cdupupupup="cdupup;cdupup"
+alias up="cd .."
+alias upup="up;up"
+alias upupup="upup;up"
+alias upupupup="upupup;up"
 
 #gap X Y = git commit -a -m X && git push origin Y
 #gap X = gap X master
