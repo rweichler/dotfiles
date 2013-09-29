@@ -5,6 +5,8 @@ alias cdupup="cdup;cdup"
 alias cdupupup="cdup;cdupup"
 alias cdupupupup="cdupup;cdupup"
 
+#gap X Y = git commit -a -m X && git push origin Y
+#gap X = gap X master
 function __gap {
     git commit -a -m "$1"
     if [ $# -ne 2 ]
