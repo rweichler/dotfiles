@@ -7,19 +7,31 @@ alias upupupup="upupup;up"
 
 alias cls="clear;ls"
 
+## Git-Commit-Push
+
 #gap X Y = git commit -a -m X && git push origin Y
 #gap X = gap X master
-function __gap {
-    git commit -a -m "$1"
-    if [ $# -ne 2 ]
+function __gcp {
+    if [ $# == 2 ]
     then
-        git push origin master
-    else
+        git commit -a -m "$1"
         git push origin $2
+    elif [ $# == 1 ]
+    then
+        if [ $1 == "--help" -o $1 == "-h" ]
+        then
+            echo "Usage: gcp commitmessage [branch]"
+        else
+            __gcp "$1" master
+        fi
+    else
+        echo "fatal: argument missing (commit message)"
+        __gcp --help
     fi
 }
 
-alias gap="__gap"
+alias gcp="__gcp"
+alias gap="gcp" #gap is easier to type :p
 
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
