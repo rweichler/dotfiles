@@ -18,15 +18,9 @@ function __gcp {
         git push origin $2
     elif [ $# == 1 ]
     then
-        if [ $1 == "--help" ]
-        then
-            echo "Usage: gcp commitmessage [branch]"
-        else
-            __gcp "$1" master
-        fi
+        __gcp "$1" master
     else
         echo "fatal: argument missing (commit message)"
-        __gcp --help
     fi
 }
 
