@@ -18,7 +18,7 @@ function __gcp {
         git push origin $2
     elif [ $# == 1 ]
     then
-        if [ $1 == "--help" -o $1 == "-h" ]
+        if [ $1 == "--help" ]
         then
             echo "Usage: gcp commitmessage [branch]"
         else
