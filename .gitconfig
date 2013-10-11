@@ -13,5 +13,6 @@
     pullm = pull origin master
     pusho = push origin
     pullo = pull origin
+    lg = log --oneline --decorate --all --graph -30
 [core]
 	excludesfile = ~/.gitignore_global

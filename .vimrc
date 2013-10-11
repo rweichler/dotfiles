@@ -81,6 +81,9 @@ set hlsearch
 
 set mouse=a
 
+"colers
+hi Comment ctermfg=darkgray
+
 "hex editing
 nnoremap <C-H> :Hex<CR>
 inoremap <C-H> <Esc>:Hex<CR>

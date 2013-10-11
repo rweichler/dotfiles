@@ -5,6 +5,8 @@ alias upup="up;up"
 alias upupup="upup;up"
 alias upupupup="upupup;up"
 
+alias cls="clear;ls"
+
 #gap X Y = git commit -a -m X && git push origin Y
 #gap X = gap X master
 function __gap {
