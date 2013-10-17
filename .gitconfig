@@ -4,6 +4,7 @@
 [color]
     ui = auto
 [alias]
+    count = rev-list HEAD --count
     ls = status
     day = log --since="yesterday" --pretty="oneline"
     cmall = commit -a
