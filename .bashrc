@@ -1,9 +1,14 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
+alias playall="mpv *.mp3 && mplayer *.flac && mplayer *.m4a"
+alias pall="playall"
+alias pa="playall"
 alias up="cd .."
 alias upup="up;up"
 alias upupup="upup;up"
 alias upupupup="upupup;up"
+alias sshu="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+alias scpu="scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 
 alias cls="clear;ls"
 
@@ -62,6 +67,8 @@ export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
 alias lsgit="git ls"
 alias lsg="lsgit"
+
+alias clsg="clear;lsg"
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return

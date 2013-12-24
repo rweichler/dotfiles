@@ -15,5 +15,6 @@
     pusho = push origin
     pullo = pull origin
     lg = log --oneline --decorate --all --graph -30
+    count = rev-list HEAD --count
 [core]
 	excludesfile = ~/.gitignore_global
