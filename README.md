@@ -24,7 +24,9 @@ Put usbmuxd and usbmuxd-1.0.8 in somewhere like /usr/bin/
 
 ### usbmuxd
 
-This is a daemon that allows you to forward a port from your iOS device to the computer using the USB port. For example the configuration I have forwards port 22 on the iPhone to port 2222 on the computer so I can SSH into it. Very useful when needing to commit code on the fly or to browse the web (only can use lynx in the shell unfortunately, but it gets the job done).
+IPHONE SSH OVER USB WOOOOOOOoOoooooOOOOO
+
+if you're on linux, just install usbmuxd and iproxy using a package manager... run submuxd as root and run iproxy as regular n shit breh yeeeeeeeeeee
 
 ### .gitconfig
 
