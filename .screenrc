@@ -3,6 +3,12 @@ startup_message off
 defscrollback 30000
 
 
-caption always "%{kB}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{kB}%?%+Lw%?"
+caption always "%{kB}%?%-Lw%?%{kW}%n*%f %t%?(%u)%?%{kB}%?%+Lw%? %=%{W}%M %d %c "
 vbell off
 term xterm-color
+defutf8 on
+
+#extra shit
+#shelltitle "$ |bash"
+#hardstatus alwayslastline
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %M %d %{W}%c %{g}]'
