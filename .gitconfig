@@ -5,16 +5,15 @@
     ui = auto
 [alias]
     count = rev-list HEAD --count
+    gay = status
     ls = status
     day = log --since="yesterday" --pretty="oneline"
-    cmall = commit -a
-    cma = commit -a
-    cmam = commit -a -m
     pushm = push origin master
     pullm = pull origin master
     pusho = push origin
     pullo = pull origin
     lg = log --oneline --decorate --all --graph -30
-    count = rev-list HEAD --count
+    goback = reset --hard HEAD~1
+    forcepush = push origin HEAD --force
 [core]
 	excludesfile = ~/.gitignore_global

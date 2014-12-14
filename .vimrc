@@ -31,7 +31,6 @@ set incsearch
 set laststatus=2
 set list
 set listchars=tab:>-,trail:-
-" set listchars=trail:-
 set number
 set report=0
 set scrolloff=8

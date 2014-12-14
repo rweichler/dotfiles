@@ -1,32 +1,60 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-alias playall="mpv *.mp3 && mplayer *.flac && mplayer *.m4a"
-alias pall="playall"
-alias pa="playall"
 alias p="cd .."
 alias pp="p;p"
 alias ppp="pp;p"
 alias pppp="ppp;p"
 alias ppppp="pppp;p"
+alias pppppp="ppppp;p"
+alias ppppppp="pppppp;p"
 alias sshu="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 alias scpu="scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+alias serve="python -m SimpleHTTPServer"
+alias json="python -m json.tool"
+alias im="git"
+alias viim="vim -n" #vim with no swap file
+alias same="fgrep -x -f"
+function m {
+    OLDIFS="$IFS"
+    IFS=$(echo -en "\n\b")
+    declare -a arr=("mp3" "flac" "m4a" "mkv" "avi" "mp4" "wav" "ogg")
+    for ext in "${arr[@]}"; do
+        for file in *.$ext; do
+            if [ $file != "*.$ext" ]; then
+                mpv $file
+            fi
+        done
+    done
+    IFS="$OLDIFS"
+}
+alias plo="p;lo"
+alias polo="plo"
 
 alias cls="clear;ls"
 
-## Git-Commit-Push
-function __gcp {
-    if [ $# == 2 ]; then
-        git commit -a -m "$1"
-        git push origin $2
-    elif [ $# == 1 ]; then
-        __gcp "$1" master
-    else
-        echo "fatal: argument missing (commit message)"
+function fuck() {
+    killall -9 "$2";
+    if [ $? == 0 ]; then
+        echo " (╯°□°）╯︵    $(echo $2|flip &2>/dev/null)"
     fi
 }
 
-alias gcp="__gcp"
+## Git-Commit-Push
+function gcp {
+    if [ $# == 3 ]; then
+        git commit -a -m "$1"
+        git push $2 $3
+    elif [ $# == 2 ]; then
+        gcp "$1" origin $2
+    elif [ $# == 1 ]; then
+        gcp "$1" master
+    else
+        git commit -a && git push origin master
+    fi
+}
+
 alias gap="gcp" #gap is easier to type :p
+alias poop="gcp" #and poop is funny
 
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -114,9 +142,10 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='$debian_chroot\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    #PS1='$debian_chroot\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='$debian_chroot\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    PS1='$debian_chroot\u@\h:\w\$ '
+    PS1='$debian_chroot\u:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -135,6 +164,7 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
+alias lo='ls -t | tail -r'
 alias l='ls -CF'
 
 # Alias definitions.
