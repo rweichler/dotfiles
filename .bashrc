@@ -21,7 +21,8 @@ function m {
     for ext in "${arr[@]}"; do
         for file in *.$ext; do
             if [ $file != "*.$ext" ]; then
-                mpv $file
+                mpv *.$ext
+                break
             fi
         done
     done
@@ -41,15 +42,20 @@ function fuck() {
 
 ## Git-Commit-Push
 function gcp {
-    if [ $# == 3 ]; then
+    CMD="gcp"
+    MSG="'some commit message'"
+    REMOTE="origin"
+    BRANCH="master"
+    TXT="Usage: $CMD $MSG\n       $CMD $MSG $BRANCH\n       $CMD $MSG $REMOTE $BRANCH"
+    if [ $# -lt 1 ] || [ $# -gt 3 ] || ([ $# == 1 ] && [ "$1" == "--help" -o "$1" == "-h" ]); then
+        echo -e "$TXT"
+    elif [ $# == 3 ]; then
         git commit -a -m "$1"
         git push $2 $3
     elif [ $# == 2 ]; then
-        gcp "$1" origin $2
+        gcp "$1" $REMOTE $2
     elif [ $# == 1 ]; then
-        gcp "$1" master
-    else
-        git commit -a && git push origin master
+        gcp "$1" $BRANCH
     fi
 }
 
